@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "demo-cellprofiler"
+version = "0.0.1"
+description = "Demonstrating various CellProfiler development or implementations."
+authors = ["d33bs"]
+license = "BSD-3-Clause"
+readme = "README.md"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.9"
+poethepoet = "^0.29.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poe.tasks]
+# defines tasks for poethepoet use
+# e.g. `poetry run poe ...`
+poster-render.shell = """
+  docker --version
+"""
+
+[tool.setuptools_scm]
+root = "."
