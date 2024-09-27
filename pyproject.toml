@@ -26,8 +26,5 @@ root = "."
 # defines tasks for poethepoet use
 # e.g. `poetry run poe ...`
 sqlite_foreign_keys.shell = """
-CPDOCKER_RUNDIR=$PWD/src/docker/sqlite_foreign_keys
-CPDOCKER_IMAGE_NAME=cp-sqlite-fk
-docker build -t $CPDOCKER_IMAGE_NAME -f $CPDOCKER_RUNDIR/Dockerfile .
-docker run --rm -it --platform linux/amd64 -w /app -v $CPDOCKER_RUNDIR:/app $CPDOCKER_IMAGE_NAME /bin/bash
+source $PWD/src/docker/sqlite_foreign_keys/run.sh
 """
