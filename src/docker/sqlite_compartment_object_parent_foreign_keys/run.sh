@@ -24,4 +24,4 @@ fi
 docker run --rm --platform linux/amd64 -w /app \
     -v $CPDOCKER_RUNDIR:/app \
     $CPDOCKER_IMAGE_NAME \
-    cellprofiler -c -r -p ExampleHuman/ExampleHuman.cppipe -o output -i ExampleHuman/images
+    cellprofiler -c -r -p ExampleHuman_exporttodatabase.cppipe -o output -i ExampleHuman/images
