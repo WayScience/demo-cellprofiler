@@ -1,0 +1,30 @@
+[build-system]
+build-backend = "poetry.core.masonry.api"
+requires = [
+  "poetry-core",
+]
+
+[tool.poetry]
+name = "demo-cellprofiler"
+version = "0.0.1"
+description = "Demonstrating various CellProfiler development or implementations."
+authors = [
+  "d33bs",
+]
+license = "BSD-3-Clause"
+readme = "README.md"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.9"
+poethepoet = "^0.29.0"
+
+[tool.setuptools_scm]
+root = "."
+
+[tool.poe.tasks]
+# defines tasks for poethepoet use
+# e.g. `poetry run poe ...`
+sqlite_foreign_keys.shell = """
+source $PWD/src/docker/sqlite_compartment_object_parent_foreign_keys/run.sh
+"""
