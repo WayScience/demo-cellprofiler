@@ -28,3 +28,6 @@ root = "."
 sqlite_foreign_keys.shell = """
 source $PWD/src/docker/sqlite_compartment_object_parent_foreign_keys/run.sh
 """
+sqlite_image_thumbnails.shell = """
+source $PWD/src/docker/sqlite_image_thumbnails/run.sh
+"""
