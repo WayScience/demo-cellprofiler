@@ -269,7 +269,7 @@ ExportToDatabase:[module_num:18|svn_version:'Unknown'|variable_revision_number:2
     Database host:
     Username:
     Password:
-    Name the SQLite database file:ExampleHuman.sqlite
+    Name the SQLite database file:ExampleHuman_thumbnails.sqlite
     Calculate the per-image mean values of object measurements?:Yes
     Calculate the per-image median values of object measurements?:No
     Calculate the per-image standard deviation values of object measurements?:No
