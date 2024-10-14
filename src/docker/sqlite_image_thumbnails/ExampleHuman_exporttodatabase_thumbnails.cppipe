@@ -283,7 +283,7 @@ ExportToDatabase:[module_num:18|svn_version:'Unknown'|variable_revision_number:2
     Enter an image url prepend if you plan to access your files via http:
     Write image thumbnails directly to the database?:Yes
     Select the images for which you want to save thumbnails:DNA,MaskDNACells,MaskDNACytoplasm,MaskDNANuclei,MaskDNAPH3,OrigOverlay,PH3,cellbody
-    Auto-scale thumbnail pixel intensities?:No
+    Auto-scale thumbnail pixel intensities?:Yes
     Select the plate type:None
     Select the plate metadata:None
     Select the well metadata:None
