@@ -2,7 +2,7 @@ CellProfiler Pipeline: http://www.cellprofiler.org
 Version:5
 DateRevision:424
 GitHash:
-ModuleCount:14
+ModuleCount:18
 HasImagePlaneDetails:False
 
 Images:[module_num:1|svn_version:'Unknown'|variable_revision_number:2|show_window:False|notes:['To begin creating your project, use the Images module to compile a list of files and/or folders that you want to analyze. You can also specify a set of rules to include only the desired files in your selected folders.']|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
@@ -227,7 +227,39 @@ SaveImages:[module_num:13|svn_version:'Unknown'|variable_revision_number:16|show
     How to save the series:T (Time)
     Save with lossless compression?:No
 
-ExportToDatabase:[module_num:14|svn_version:'Unknown'|variable_revision_number:28|show_window:True|notes:[]|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+MaskImage:[module_num:14|svn_version:'Unknown'|variable_revision_number:3|show_window:True|notes:[]|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+    Select the input image:DNA
+    Name the output image:MaskDNACells
+    Use objects or an image as a mask?:Objects
+    Select object for mask:Cells
+    Select image for mask:None
+    Invert the mask?:No
+
+MaskImage:[module_num:15|svn_version:'Unknown'|variable_revision_number:3|show_window:True|notes:[]|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+    Select the input image:DNA
+    Name the output image:MaskDNACytoplasm
+    Use objects or an image as a mask?:Objects
+    Select object for mask:Cytoplasm
+    Select image for mask:None
+    Invert the mask?:No
+
+MaskImage:[module_num:16|svn_version:'Unknown'|variable_revision_number:3|show_window:True|notes:[]|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+    Select the input image:DNA
+    Name the output image:MaskDNANuclei
+    Use objects or an image as a mask?:Objects
+    Select object for mask:Nuclei
+    Select image for mask:None
+    Invert the mask?:No
+
+MaskImage:[module_num:17|svn_version:'Unknown'|variable_revision_number:3|show_window:True|notes:[]|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+    Select the input image:DNA
+    Name the output image:MaskDNAPH3
+    Use objects or an image as a mask?:Objects
+    Select object for mask:PH3
+    Select image for mask:None
+    Invert the mask?:No
+
+ExportToDatabase:[module_num:18|svn_version:'Unknown'|variable_revision_number:28|show_window:True|notes:[]|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
     Database type:SQLite
     Database name:DefaultDB
     Add a prefix to table names?:No
@@ -250,7 +282,7 @@ ExportToDatabase:[module_num:14|svn_version:'Unknown'|variable_revision_number:2
     Create one table per object, a single object table or a single object view?:One table per object type
     Enter an image url prepend if you plan to access your files via http:
     Write image thumbnails directly to the database?:Yes
-    Select the images for which you want to save thumbnails:DNA,OrigOverlay,PH3,cellbody
+    Select the images for which you want to save thumbnails:DNA,MaskDNACells,MaskDNACytoplasm,MaskDNANuclei,MaskDNAPH3,OrigOverlay,PH3,cellbody
     Auto-scale thumbnail pixel intensities?:No
     Select the plate type:None
     Select the plate metadata:None
