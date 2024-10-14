@@ -33,45 +33,45 @@ docker run --rm --platform linux/amd64 -w /app \
     cellprofiler -c -r -p ExampleHuman_exporttodatabase_thumbnails.cppipe -o output -i ExampleHuman/images
 
 # export sqlite schemas (table structure) without thumbnails
-sqlite3 $PWD/src/docker/sqlite_compartment_object_parent_foreign_keys/output/ExampleHuman.sqlite .schema \
-     > $CPDOCKER_RUNDIR/without_thumbnails_schema.sql
-sqlite3 $PWD/src/docker/sqlite_image_thumbnails/output/ExampleHuman_thumbnails.sqlite .schema \
-    > $CPDOCKER_RUNDIR/with_thumbnails_schema.sql
+sqlite3 "$PWD/src/docker/sqlite_compartment_object_parent_foreign_keys/output/ExampleHuman.sqlite" .schema \
+     > "$CPDOCKER_RUNDIR/without_thumbnails_schema.sql"
+sqlite3 "$PWD/src/docker/sqlite_image_thumbnails/output/ExampleHuman_thumbnails.sqlite" .schema \
+    > "$CPDOCKER_RUNDIR/with_thumbnails_schema.sql"
 
 # show the difference between the schema files to determine where thumbnails are
-diff -u $CPDOCKER_RUNDIR/without_thumbnails_schema.sql $CPDOCKER_RUNDIR/with_thumbnails_schema.sql \
-    > $CPDOCKER_RUNDIR/thumbnail_schema_diff.diff
+diff -u "$CPDOCKER_RUNDIR/without_thumbnails_schema.sql" "$CPDOCKER_RUNDIR/with_thumbnails_schema.sql" \
+    > "$CPDOCKER_RUNDIR/thumbnail_schema_diff.diff"
 
 # export the long blobs to standalone images outside the database for understanding
-python $CPDOCKER_RUNDIR/read_cp_sqlite_image_to_file.py \
-    $PWD/src/docker/sqlite_image_thumbnails/output/ExampleHuman_thumbnails.sqlite \
+python "$CPDOCKER_RUNDIR/read_cp_sqlite_image_to_file.py" \
+    "$PWD/src/docker/sqlite_image_thumbnails/output/ExampleHuman_thumbnails.sqlite" \
     Image_Thumbnail_DNA \
-    $CPDOCKER_RUNDIR/output/Image_Thumbnail_DNA
-python $CPDOCKER_RUNDIR/read_cp_sqlite_image_to_file.py \
-    $PWD/src/docker/sqlite_image_thumbnails/output/ExampleHuman_thumbnails.sqlite \
+    "$CPDOCKER_RUNDIR/output/Image_Thumbnail_DNA"
+python "$CPDOCKER_RUNDIR/read_cp_sqlite_image_to_file.py" \
+    "$PWD/src/docker/sqlite_image_thumbnails/output/ExampleHuman_thumbnails.sqlite" \
     Image_Thumbnail_MaskDNACells \
-    $CPDOCKER_RUNDIR/output/Image_Thumbnail_MaskDNACells
-python $CPDOCKER_RUNDIR/read_cp_sqlite_image_to_file.py \
-    $PWD/src/docker/sqlite_image_thumbnails/output/ExampleHuman_thumbnails.sqlite \
+    "$CPDOCKER_RUNDIR/output/Image_Thumbnail_MaskDNACells"
+python "$CPDOCKER_RUNDIR/read_cp_sqlite_image_to_file.py" \
+    "$PWD/src/docker/sqlite_image_thumbnails/output/ExampleHuman_thumbnails.sqlite" \
     Image_Thumbnail_MaskDNACytoplasm \
-    $CPDOCKER_RUNDIR/output/Image_Thumbnail_MaskDNACytoplasm
-python $CPDOCKER_RUNDIR/read_cp_sqlite_image_to_file.py \
-    $PWD/src/docker/sqlite_image_thumbnails/output/ExampleHuman_thumbnails.sqlite \
+    "$CPDOCKER_RUNDIR/output/Image_Thumbnail_MaskDNACytoplasm"
+python "$CPDOCKER_RUNDIR/read_cp_sqlite_image_to_file.py" \
+    "$PWD/src/docker/sqlite_image_thumbnails/output/ExampleHuman_thumbnails.sqlite" \
     Image_Thumbnail_MaskDNANuclei \
-    $CPDOCKER_RUNDIR/output/Image_Thumbnail_MaskDNANuclei
-python $CPDOCKER_RUNDIR/read_cp_sqlite_image_to_file.py \
-    $PWD/src/docker/sqlite_image_thumbnails/output/ExampleHuman_thumbnails.sqlite \
+    "$CPDOCKER_RUNDIR/output/Image_Thumbnail_MaskDNANuclei"
+python "$CPDOCKER_RUNDIR/read_cp_sqlite_image_to_file.py" \
+    "$PWD/src/docker/sqlite_image_thumbnails/output/ExampleHuman_thumbnails.sqlite" \
     Image_Thumbnail_MaskDNAPH3 \
-    $CPDOCKER_RUNDIR/output/Image_Thumbnail_MaskDNAPH3
-python $CPDOCKER_RUNDIR/read_cp_sqlite_image_to_file.py \
-    $PWD/src/docker/sqlite_image_thumbnails/output/ExampleHuman_thumbnails.sqlite \
+    "$CPDOCKER_RUNDIR/output/Image_Thumbnail_MaskDNAPH3"
+python "$CPDOCKER_RUNDIR/read_cp_sqlite_image_to_file.py" \
+    "$PWD/src/docker/sqlite_image_thumbnails/output/ExampleHuman_thumbnails.sqlite" \
     Image_Thumbnail_OrigOverlay \
-    $CPDOCKER_RUNDIR/output/Image_Thumbnail_OrigOverlay
-python $CPDOCKER_RUNDIR/read_cp_sqlite_image_to_file.py \
-    $PWD/src/docker/sqlite_image_thumbnails/output/ExampleHuman_thumbnails.sqlite \
+    "$CPDOCKER_RUNDIR/output/Image_Thumbnail_OrigOverlay"
+python "$CPDOCKER_RUNDIR/read_cp_sqlite_image_to_file.py" \
+    "$PWD/src/docker/sqlite_image_thumbnails/output/ExampleHuman_thumbnails.sqlite" \
     Image_Thumbnail_PH3 \
-    $CPDOCKER_RUNDIR/output/Image_Thumbnail_PH3
-python $CPDOCKER_RUNDIR/read_cp_sqlite_image_to_file.py \
-    $PWD/src/docker/sqlite_image_thumbnails/output/ExampleHuman_thumbnails.sqlite \
+    "$CPDOCKER_RUNDIR/output/Image_Thumbnail_PH3"
+python "$CPDOCKER_RUNDIR/read_cp_sqlite_image_to_file.py" \
+    "$PWD/src/docker/sqlite_image_thumbnails/output/ExampleHuman_thumbnails.sqlite" \
     Image_Thumbnail_cellbody \
-    $CPDOCKER_RUNDIR/output/Image_Thumbnail_cellbody
+    "$CPDOCKER_RUNDIR/output/Image_Thumbnail_cellbody"

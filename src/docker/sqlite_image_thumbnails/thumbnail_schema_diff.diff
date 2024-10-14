@@ -1,5 +1,5 @@
---- /Users/dabu5788/Documents/work/demo-cellprofiler/src/docker/sqlite_image_thumbnails/without_thumbnails_schema.sql	2024-10-14 10:51:49.000000000 -0600
-+++ /Users/dabu5788/Documents/work/demo-cellprofiler/src/docker/sqlite_image_thumbnails/with_thumbnails_schema.sql	2024-10-14 10:51:49.000000000 -0600
+--- /Users/dabu5788/Documents/work/demo-cellprofiler/src/docker/sqlite_image_thumbnails/without_thumbnails_schema.sql	2024-10-14 11:05:21.000000000 -0600
++++ /Users/dabu5788/Documents/work/demo-cellprofiler/src/docker/sqlite_image_thumbnails/with_thumbnails_schema.sql	2024-10-14 11:05:21.000000000 -0600
 @@ -357,6 +357,10 @@
  Image_ExecutionTime_11MeasureObjectSizeShape float,
  Image_ExecutionTime_12OverlayOutlines float,
