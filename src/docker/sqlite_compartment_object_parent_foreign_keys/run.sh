@@ -32,10 +32,10 @@ SOURCE_DB="$CPDOCKER_RUNDIR/output/ExampleHuman.sqlite"
 TARGET_DB="$CPDOCKER_RUNDIR/ExampleHuman_modified.sqlite"
 
 # remove the targetdb to get a clean database
-rm -f $TARGET_DB
+rm -f "$TARGET_DB"
 
 # perform copies from the source to target databases using new schema
-sqlite3 $TARGET_DB <<EOF
+sqlite3 "$TARGET_DB" <<EOF
 ATTACH DATABASE '$SOURCE_DB' AS source;
 .read $CPDOCKER_RUNDIR/examplehuman_modified.sql
 INSERT INTO Per_Image SELECT * FROM source.Per_Image;

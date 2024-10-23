@@ -163,6 +163,6 @@ cython_debug/
 
 # ignores specific to the project
 *.zip
-src/docker/sqlite_compartment_object_parent_foreign_keys/ExampleHuman
-src/docker/sqlite_compartment_object_parent_foreign_keys/output
+ExampleHuman/
+output/
 __MACOSX

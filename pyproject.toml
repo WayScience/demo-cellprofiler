@@ -16,8 +16,10 @@ readme = "README.md"
 package-mode = false
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = ">=3.10,<4.0"
 poethepoet = "^0.29.0"
+pillow = "^10.4.0"
+numpy = "^2.1.2"
 
 [tool.setuptools_scm]
 root = "."
@@ -27,4 +29,7 @@ root = "."
 # e.g. `poetry run poe ...`
 sqlite_foreign_keys.shell = """
 source $PWD/src/docker/sqlite_compartment_object_parent_foreign_keys/run.sh
+"""
+sqlite_image_thumbnails.shell = """
+source $PWD/src/docker/sqlite_image_thumbnails/run.sh
 """
