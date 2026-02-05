@@ -1,35 +1,45 @@
 [build-system]
-build-backend = "poetry.core.masonry.api"
+build-backend = "setuptools.build_meta"
 requires = [
-  "poetry-core",
+  "setuptools>=69",
 ]
 
-[tool.poetry]
+[project]
 name = "demo-cellprofiler"
 version = "0.0.1"
 description = "Demonstrating various CellProfiler development or implementations."
-authors = [
-  "d33bs",
-]
-license = "BSD-3-Clause"
 readme = "README.md"
-package-mode = false
-
-[tool.poetry.dependencies]
-python = ">=3.10,<4.0"
-poethepoet = "^0.29.0"
-pillow = "^10.4.0"
-numpy = "^2.1.2"
+license = { text = "BSD-3-Clause" }
+authors = [
+  { name = "d33bs" },
+]
+requires-python = ">=3.10,<4.0"
+classifiers = [
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+]
+dependencies = [
+  "numpy>=2.1.2,<3",
+  "pandas>=2.3.3",
+  "pillow>=10.4,<11",
+  "poethepoet>=0.29,<0.30",
+  "pyarrow>=23.0.0",
+]
 
 [tool.setuptools_scm]
 root = "."
 
 [tool.poe.tasks]
 # defines tasks for poethepoet use
-# e.g. `poetry run poe ...`
+# e.g. `uv run poe ...`
 sqlite_foreign_keys.shell = """
 source $PWD/src/docker/sqlite_compartment_object_parent_foreign_keys/run.sh
 """
 sqlite_image_thumbnails.shell = """
 source $PWD/src/docker/sqlite_image_thumbnails/run.sh
+"""
+threedee_nuclei_profiling.shell = """
+source $PWD/src/docker/3d-nuclei-profiling/run.sh
 """
