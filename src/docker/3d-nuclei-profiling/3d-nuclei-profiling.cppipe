@@ -121,7 +121,7 @@ MeasureObjectSizeShape:[module_num:11|svn_version:'Unknown'|variable_revision_nu
     Calculate the Zernike features?:No
     Calculate the advanced features?:Yes
 
-RescaleIntensity:[module_num:12|svn_version:'Unknown'|variable_revision_number:3|show_window:True|notes:[]|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+RescaleIntensity:[module_num:12|svn_version:'Unknown'|variable_revision_number:3|show_window:True|notes:[]|batch_state:array([], dtype=uint8)|enabled:False|wants_pause:False]
     Select the input image:Nuclei
     Name the output image:RescaleIntensityNuclei
     Rescaling method:Stretch each image to use the full intensity range
@@ -135,13 +135,13 @@ RescaleIntensity:[module_num:12|svn_version:'Unknown'|variable_revision_number:3
     Divisor value:1.0
     Divisor measurement:None
 
-OverlayObjects:[module_num:13|svn_version:'Unknown'|variable_revision_number:1|show_window:True|notes:[]|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+OverlayObjects:[module_num:13|svn_version:'Unknown'|variable_revision_number:1|show_window:True|notes:[]|batch_state:array([], dtype=uint8)|enabled:False|wants_pause:False]
     Input:RescaleIntensityNuclei
     Name the output image:OverlayObjects
     Objects:RealsizeNuclei
     Opacity:0.3
 
-SaveImages:[module_num:14|svn_version:'Unknown'|variable_revision_number:16|show_window:True|notes:[]|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:True]
+SaveImages:[module_num:14|svn_version:'Unknown'|variable_revision_number:16|show_window:True|notes:[]|batch_state:array([], dtype=uint8)|enabled:False|wants_pause:True]
     Select the type of image to save:Image
     Select the image to save:OverlayObjects
     Select method for constructing file names:From image filename
@@ -163,22 +163,22 @@ SaveImages:[module_num:14|svn_version:'Unknown'|variable_revision_number:16|show
 
 ConvertObjectsToImage:[module_num:15|svn_version:'Unknown'|variable_revision_number:1|show_window:True|notes:[]|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
     Select the input objects:RealsizeNuclei
-    Name the output image:NucleiObjects3D
+    Name the output image:NucleiSegmentationMask
     Select the color format:Grayscale
     Select the colormap:Default
 
 SaveImages:[module_num:16|svn_version:'Unknown'|variable_revision_number:16|show_window:True|notes:[]|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
     Select the type of image to save:Image
-    Select the image to save:NucleiObjects3D
+    Select the image to save:NucleiSegmentationMask
     Select method for constructing file names:From image filename
     Select image name for file prefix:Nuclei
     Enter single file name:OrigBlue
     Number of digits:4
     Append a suffix to the image file name?:Yes
-    Text to append to the image name:3D
+    Text to append to the image name:SegmentationMask
     Saved file format:tiff
-    Output file location:Default Output Folder|
-    Image bit depth:8-bit integer
+    Output file location:Elsewhere...|/app/output/masks
+    Image bit depth:16-bit integer
     Overwrite existing files without warning?:Yes
     When to save:Every cycle
     Record the file and path information to the saved image?:No
